@@ -1,62 +1,71 @@
 # AtliQ Hotels Data Analysis Project
 
-This project involves analyzing various datasets related to AtliQ Hotels to derive insights about bookings, revenue, occupancy rates, and more. The analysis includes data cleaning, transformation, and generating visual and statistical insights.
+## Overview
+This project involves a comprehensive data analysis for AtliQ Hotels, a prestigious luxury hotel chain in India operating across Mumbai, Delhi, Hyderabad, and Bangalore. The aim is to delve into their business data from May 2022 to August 2022, uncover insights, and understand the underlying trends affecting their business.
 
 ## Project Structure
+The project follows a structured approach:
 
-### 1. Data Import and Data Exploration
+1. **Data Import and Exploration**: Understanding the dataset's structure and content.
+2. **Data Cleaning**: Ensuring data quality and consistency.
+3. **Data Transformation**: Preparing the data for analysis.
+4. **Analysis Insights**: Extracting actionable insights to drive business decisions.
 
-**Datasets:**
-- `dim_date.csv`
-- `dim_hotels.csv`
-- `dim_rooms.csv`
-- `fact_aggregated_bookings.csv`
+## Datasets
+The analysis utilizes the following datasets:
+
+### Dimension Tables:
+- `dim_hotel.csv`
+- `dim_room_type.csv`
+- `dim_customer.csv`
+
+### Fact Tables:
 - `fact_bookings.csv`
+- `fact_revenue.csv`
+- `fact_expenses.csv`
 
-The project begins with importing and exploring these datasets to understand their structure and content. Key steps include:
+The dataset contains approximately 135,000 rows of data.
 
-- Reading data into dataframes using Pandas.
-- Exploring the `fact_bookings` dataset for unique room categories and booking platforms.
-- Analyzing hotel information such as category distribution and city-wise hotel counts.
-- Exploring aggregate bookings to understand booking trends, capacity utilization, and more.
+## Files in the Repository
+- **AtliQ_Hotels_Data_Analysis.ipynb**: The Jupyter Notebook containing the entire analysis.
+- **data/**: A directory containing the CSV files for the dimension and fact tables:
+  - `dim_hotel.csv`
+  - `dim_room_type.csv`
+  - `dim_customer.csv`
+  - `fact_bookings.csv`
+  - `fact_revenue.csv`
+  - `fact_expenses.csv`
+
+## Project Execution
+The analysis is performed in Python using Pandas within a Jupyter Notebook. Below is a summary of each step:
+
+### 1. Data Import and Exploration
+- Importing the datasets using Pandas.
+- Understanding the structure and content of each dataset.
+- Conducting initial exploratory data analysis (EDA) to get a sense of the data.
 
 ### 2. Data Cleaning
-
-Data cleaning is crucial to ensure the accuracy and reliability of the analysis. The cleaning steps include:
-
-- **Cleaning invalid guests**: Removing records with non-positive guest counts.
-- **Outlier removal**: Identifying and removing outliers in revenue data.
-- **Handling missing values**: Filling null values with appropriate substitutes, such as the median for capacity.
+- Handling missing values.
+- Ensuring consistency in data types.
+- Addressing any data quality issues identified during exploration.
 
 ### 3. Data Transformation
+- Merging dimension and fact tables for comprehensive analysis.
+- Creating new features if necessary.
+- Preparing the data for analysis by aggregating and transforming as needed.
 
-Transformation steps include:
+### 4. Analysis Insights
+- Leveraging Pandas' groupby and merge functions to uncover insights.
+- Analyzing booking trends, revenue patterns, and expense distributions.
+- Identifying key drivers of business performance.
+- Providing actionable insights to support strategic decision-making.
 
-- **Creating new columns**: For example, calculating the occupancy percentage (`occ_pct`) in the `fact_aggregated_bookings` dataset.
-- **Merging data**: Combining different datasets to create a comprehensive view for analysis.
-- **Normalization and aggregation**: Applying these techniques where necessary.
+## Key Insights
+Some of the key insights derived from the analysis include:
+- Trends in booking volumes across different cities.
+- Revenue performance by hotel and room type.
+- Expense patterns and their impact on profitability.
+- Customer behavior and preferences.
 
-### 4. Insights Generation
-
-The final step involves deriving actionable insights from the data:
-
-1. **Average occupancy rate per room category**
-2. **Average occupancy rate per city**
-3. **Occupancy comparison between weekdays and weekends**
-4. **Occupancy analysis for June by city**
-5. **Appending new data for August**
-6. **Revenue realized per city**
-7. **Month-by-month revenue analysis**
-
-#### Exercises:
-- **Print revenue realized per hotel type**
-- **Print average rating per city**
-- **Pie chart of revenue realized per booking platform**
-
-## Usage
-
-To run this project, you will need Python installed along with the Pandas library. Clone the repository, place the datasets in the appropriate folder, and run the script to perform the analysis.
-
-## License
-
-This project is licensed under the MIT License.
+## Conclusion
+This project demonstrates a comprehensive approach to data analysis for a luxury hotel chain. By following the structured approach outlined above, we can derive valuable insights to support strategic business decisions.
